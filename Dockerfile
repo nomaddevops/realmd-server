@@ -1,5 +1,5 @@
 ARG MANGOS_VERSION
-FROM --platform=linux/amd64 mangos-base:$MANGOS_VERSION as build-realmd
+FROM --platform=linux/amd64 joffreydupire/mangos-base:$MANGOS_VERSION as build-realmd
 WORKDIR /home/build
 RUN cmake .. -DCMAKE_INSTALL_PREFIX=/mangos -DBUILD_MANGOSD=0 -DBUILD_REALMD=1 -DBUILD_TOOLS=0
 RUN make -j4
