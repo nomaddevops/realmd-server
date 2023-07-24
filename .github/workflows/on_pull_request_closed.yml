@@ -42,5 +42,6 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: MANGOS_VERSION=v22.04.6
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:v${{ steps.semantic.outputs.last_release_version }}
